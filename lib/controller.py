@@ -85,7 +85,7 @@ class Controller:
         _ = "nmap -sS -Pn -A -p {ports} {target_ip} -oN {logfile}".format(ports=','.join(masscan.data), target_ip=target.data['ip'], logfile=self.logfile)
         nmap = Nmap(_, self.logfile)
         if nmap.data:
-            if 80 in nmap.data and 443 in nmap.data:
+            if '80' in nmap.data and '443' in nmap.data:
                 nmap.data.remove("443")
             return ['{}:{}'.format(target.data['http_url'], port) for port in nmap.data]
 
