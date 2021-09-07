@@ -2,7 +2,7 @@ import os
 
 TOOLS_DIR = os.path.join(os.path.split(os.path.dirname(os.path.realpath(__file__)))[0], 'tools')
 TOOLS = {
-    'xray': "https://download.xray.cool/xray/1.7.0/xray_linux_amd64.zip",
+    'xray_linux_amd64': "https://download.xray.cool/xray/1.7.0/xray_linux_amd64.zip",
     'crawlergo': 'https://github.com/0Kee-Team/crawlergo/releases/download/v0.4.0/crawlergo_linux_amd64.zip',
     'dirsearch': 'https://github.com/maurosoria/dirsearch/archive/v0.4.1.zip',
     'oneforall': 'https://github.com/shmilylty/OneForAll/archive/v0.4.3.zip',
@@ -28,4 +28,4 @@ def download():
     if set([name for name in TOOLS.keys()]).issubset(set(os.listdir())):
         os.system('touch install.lock')
     else:
-        exit('The tool has not been downloaded completely, check lib//download_tools.py for details')
+        exit('The tool has not been downloaded completely, check lib/download_tools.py for details')
